@@ -4,7 +4,12 @@
  */
 package desarrollodeinterfaces.ProyectoAPP.vista;
 
+import desarrollodeinterfaces.ProyectoAPP.controller.UsuarioController;
 import desarrollodeinterfaces.ProyectoAPP.vista.IniciarSesion;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import org.netbeans.validation.api.builtin.stringvalidation.StringValidators;
+import org.netbeans.validation.api.ui.ValidationGroup;
 
 /**
  *
@@ -24,6 +29,25 @@ public class OlvidarContrasena extends javax.swing.JDialog {
         initComponents();
         transparenteValidation();
         
+        
+         ButtonAceptar.setEnabled(false);
+        ValidationGroup group=validationPanel1.getValidationGroup();
+        
+        group.add(jTextFieldNuevaContrasena, StringValidators.REQUIRE_NON_EMPTY_STRING);
+        group.add(jTextFieldRepetirContrasena1,StringValidators.REQUIRE_NON_EMPTY_STRING);
+         group.add(jTextFieldUsuario,StringValidators.REQUIRE_NON_EMPTY_STRING);
+        
+        
+        validationPanel1.addChangeListener(new ChangeListener(){
+            @Override
+            public void stateChanged(ChangeEvent e){
+                if (validationPanel1.getProblem()==null)
+                    ButtonAceptar.setEnabled(true);
+                else
+                    ButtonAceptar.setEnabled(false);
+            }
+        });
+        
     }
     
     public void transparenteValidation() {
@@ -42,9 +66,11 @@ public class OlvidarContrasena extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         jLabelNuevaContrasena1 = new javax.swing.JLabel();
-        jLabelRepiteContrasena = new javax.swing.JLabel();
-        jTextFieldRepetirContrasena = new javax.swing.JTextField();
+        jLabelRepiteContrasena1 = new javax.swing.JLabel();
+        jLabelUsuario = new javax.swing.JLabel();
         jTextFieldNuevaContrasena = new javax.swing.JTextField();
+        jTextFieldRepetirContrasena1 = new javax.swing.JTextField();
+        jTextFieldUsuario = new javax.swing.JTextField();
         validationPanel1 = new org.netbeans.validation.api.ui.swing.ValidationPanel();
         ButtonVolver = new javax.swing.JButton();
         ButtonAceptar = new javax.swing.JButton();
@@ -56,22 +82,34 @@ public class OlvidarContrasena extends javax.swing.JDialog {
 
         jLabelNuevaContrasena1.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
         jLabelNuevaContrasena1.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.jLabelNuevaContrasena1.text")); // NOI18N
-        jPanel1.add(jLabelNuevaContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 160, 50));
+        jPanel1.add(jLabelNuevaContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 160, 50));
 
-        jLabelRepiteContrasena.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
-        jLabelRepiteContrasena.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.jLabelRepiteContrasena.text")); // NOI18N
-        jPanel1.add(jLabelRepiteContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 200, 220, 50));
+        jLabelRepiteContrasena1.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
+        jLabelRepiteContrasena1.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.jLabelRepiteContrasena1.text")); // NOI18N
+        jPanel1.add(jLabelRepiteContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 220, 50));
 
-        jTextFieldRepetirContrasena.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.jTextFieldRepetirContrasena.text")); // NOI18N
-        jPanel1.add(jTextFieldRepetirContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 200, 220, 40));
+        jLabelUsuario.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
+        jLabelUsuario.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.jLabelUsuario.text")); // NOI18N
+        jPanel1.add(jLabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 220, 50));
 
+        jTextFieldNuevaContrasena.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
         jTextFieldNuevaContrasena.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.jTextFieldNuevaContrasena.text")); // NOI18N
         jTextFieldNuevaContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNuevaContrasenaActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextFieldNuevaContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 220, 40));
+        jPanel1.add(jTextFieldNuevaContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 220, 40));
+
+        jTextFieldRepetirContrasena1.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
+        jTextFieldRepetirContrasena1.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.jTextFieldRepetirContrasena1.text")); // NOI18N
+        jPanel1.add(jTextFieldRepetirContrasena1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 160, 220, 40));
+
+        jTextFieldUsuario.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
+        jTextFieldUsuario.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.jTextFieldUsuario.text")); // NOI18N
+        jPanel1.add(jTextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 220, 40));
+
+        validationPanel1.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         jPanel1.add(validationPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 16, 420, 60));
 
         ButtonVolver.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
@@ -92,7 +130,7 @@ public class OlvidarContrasena extends javax.swing.JDialog {
         });
         jPanel1.add(ButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 350, -1, -1));
 
-        Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desarrollodeinterfaces/ProyectoAPP/fondoappFinal.jpg"))); // NOI18N
+        Foto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desarrollodeinterfaces/ProyectoAPP/imagenIniciarSesionTamaño.jpg"))); // NOI18N
         Foto.setText(org.openide.util.NbBundle.getMessage(OlvidarContrasena.class, "OlvidarContrasena.Foto.text")); // NOI18N
         jPanel1.add(Foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
 
@@ -116,14 +154,20 @@ public class OlvidarContrasena extends javax.swing.JDialog {
 
     private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
         
-        
-        
+        if(UsuarioController.contraseñaOlvidada(jTextFieldUsuario.getText(),jTextFieldNuevaContrasena.getText(),jTextFieldRepetirContrasena1.getText())==true){
+             UsuarioController.updateContrasena(jTextFieldNuevaContrasena.getText(),jTextFieldUsuario.getText()) ;
+            dispose();
+        }else{
+            
+        }
+ 
         
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     private void ButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVolverActionPerformed
         IniciarSesion is1 = new IniciarSesion();
         is1.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ButtonVolverActionPerformed
 
     /**
@@ -173,10 +217,12 @@ public class OlvidarContrasena extends javax.swing.JDialog {
     private javax.swing.JButton ButtonVolver;
     private javax.swing.JLabel Foto;
     private javax.swing.JLabel jLabelNuevaContrasena1;
-    private javax.swing.JLabel jLabelRepiteContrasena;
+    private javax.swing.JLabel jLabelRepiteContrasena1;
+    private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextFieldNuevaContrasena;
-    private javax.swing.JTextField jTextFieldRepetirContrasena;
+    private javax.swing.JTextField jTextFieldRepetirContrasena1;
+    private javax.swing.JTextField jTextFieldUsuario;
     private org.netbeans.validation.api.ui.swing.ValidationPanel validationPanel1;
     // End of variables declaration//GEN-END:variables
 }

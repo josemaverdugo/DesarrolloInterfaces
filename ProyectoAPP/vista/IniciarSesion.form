@@ -40,6 +40,11 @@
       </Layout>
       <SubComponents>
         <Component class="org.netbeans.validation.api.ui.swing.ValidationPanel" name="validationPanel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="18" style="1"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="100" y="30" width="440" height="60"/>
@@ -63,6 +68,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TextFieldUsuario">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="22" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="IniciarSesion.TextFieldUsuario.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
@@ -98,6 +106,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TextFieldContrasena">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="22" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="IniciarSesion.TextFieldContrasena.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
@@ -143,7 +154,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="90" y="380" width="-1" height="40"/>
+              <AbsoluteConstraints x="130" y="380" width="-1" height="40"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -156,6 +167,9 @@
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="IniciarSesion.BotonEntrar.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonEntrarActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
               <AbsoluteConstraints x="420" y="380" width="110" height="40"/>
@@ -165,7 +179,7 @@
         <Component class="javax.swing.JLabel" name="Fondo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/desarrollodeinterfaces/ProyectoAPP/fondoappFinal.jpg"/>
+              <Image iconType="3" name="/desarrollodeinterfaces/ProyectoAPP/imagenIniciarSesionTama&#xf1;o.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="IniciarSesion.Fondo.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>

@@ -40,9 +40,14 @@
       </Layout>
       <SubComponents>
         <Component class="org.netbeans.validation.api.ui.swing.ValidationPanel" name="validationPanel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="18" style="1"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="10" width="440" height="50"/>
+              <AbsoluteConstraints x="20" y="10" width="440" height="70"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -63,6 +68,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TextFieldUsuario">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="22" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="Registrarse.TextFieldUsuario.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
@@ -90,6 +98,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TextFieldContrasena">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="22" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="Registrarse.TextFieldContrasena.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
@@ -117,6 +128,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TextFieldRepetirContrasena">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="22" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="Registrarse.TextFieldRepetirContrasena.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
@@ -147,6 +161,9 @@
         </Component>
         <Component class="javax.swing.JTextField" name="TextFieldEdad">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Cascadia Mono" size="22" style="1"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="Registrarse.TextFieldEdad.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>
             </Property>
@@ -171,7 +188,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="90" y="370" width="-1" height="-1"/>
+              <AbsoluteConstraints x="120" y="370" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -196,7 +213,7 @@
         <Component class="javax.swing.JLabel" name="Fondo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/desarrollodeinterfaces/ProyectoAPP/fondoappFinal.jpg"/>
+              <Image iconType="3" name="/desarrollodeinterfaces/ProyectoAPP/imagenIniciarSesionTama&#xf1;o.jpg"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="desarrollodeinterfaces/ProyectoAPP/vista/Bundle.properties" key="Registrarse.Fondo.text" replaceFormat="org.openide.util.NbBundle.getMessage({sourceFileName}.class, &quot;{key}&quot;)"/>

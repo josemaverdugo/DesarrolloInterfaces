@@ -8,6 +8,7 @@ import desarrollodeinterfaces.ProyectoAPP.modelo.Usuario;
 import desarrollodeinterfaces.ProyectoAPP.controller.UsuarioController;
 import desarrollodeinterfaces.ProyectoAPP.vista.Inicio;
 import desarrollodeinterfaces.ProyectoAPP.vista.Inicio;
+import javax.swing.JOptionPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import org.netbeans.validation.api.builtin.stringvalidation.StringValidators;
@@ -83,12 +84,15 @@ public class Registrarse extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(validationPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 440, 50));
+
+        validationPanel1.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
+        jPanel1.add(validationPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 440, 70));
 
         LabelUsuario.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
         LabelUsuario.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.LabelUsuario.text")); // NOI18N
         jPanel1.add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 80, 40));
 
+        TextFieldUsuario.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
         TextFieldUsuario.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.TextFieldUsuario.text")); // NOI18N
         jPanel1.add(TextFieldUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 190, 40));
 
@@ -96,6 +100,7 @@ public class Registrarse extends javax.swing.JDialog {
         LabelContrasena.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.LabelContrasena.text")); // NOI18N
         jPanel1.add(LabelContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 100, 40));
 
+        TextFieldContrasena.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
         TextFieldContrasena.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.TextFieldContrasena.text")); // NOI18N
         jPanel1.add(TextFieldContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 190, 40));
 
@@ -103,6 +108,7 @@ public class Registrarse extends javax.swing.JDialog {
         LabelRepetirContrasena.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.LabelRepetirContrasena.text")); // NOI18N
         jPanel1.add(LabelRepetirContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, 40));
 
+        TextFieldRepetirContrasena.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
         TextFieldRepetirContrasena.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.TextFieldRepetirContrasena.text")); // NOI18N
         TextFieldRepetirContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +121,7 @@ public class Registrarse extends javax.swing.JDialog {
         LabelEdad.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.LabelEdad.text")); // NOI18N
         jPanel1.add(LabelEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 50, 30));
 
+        TextFieldEdad.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
         TextFieldEdad.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.TextFieldEdad.text")); // NOI18N
         jPanel1.add(TextFieldEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 280, 190, 40));
 
@@ -125,7 +132,7 @@ public class Registrarse extends javax.swing.JDialog {
                 ButtonVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(ButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, -1));
+        jPanel1.add(ButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, -1, -1));
 
         ButtonAceptar.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
         ButtonAceptar.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.ButtonAceptar.text")); // NOI18N
@@ -136,7 +143,7 @@ public class Registrarse extends javax.swing.JDialog {
         });
         jPanel1.add(ButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 370, -1, -1));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desarrollodeinterfaces/ProyectoAPP/fondoappFinal.jpg"))); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desarrollodeinterfaces/ProyectoAPP/imagenIniciarSesionTamaño.jpg"))); // NOI18N
         Fondo.setText(org.openide.util.NbBundle.getMessage(Registrarse.class, "Registrarse.Fondo.text")); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
 
@@ -160,8 +167,8 @@ public class Registrarse extends javax.swing.JDialog {
 
     private void ButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonAceptarActionPerformed
        
-        
-        Usuario u1 = new Usuario();
+        if(TextFieldContrasena.getText().equals(TextFieldRepetirContrasena.getText())){
+             Usuario u1 = new Usuario();
         u1.setId(0);
         u1.setUsuario(TextFieldUsuario.getText());
         u1.setContrasena(TextFieldContrasena.getText());
@@ -169,13 +176,25 @@ public class Registrarse extends javax.swing.JDialog {
         
         UsuarioController.crearUsuario(u1);
         
+        IniciarSesion is=new IniciarSesion();
+        is.setVisible(true);
+        
         dispose();
+        
+        }else{
+            JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales", "Intentelo de nuevo", JOptionPane.INFORMATION_MESSAGE);
+        }
+        
+       
+        
+        
         
     }//GEN-LAST:event_ButtonAceptarActionPerformed
 
     private void ButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVolverActionPerformed
         Inicio i1=new Inicio();
         i1.setVisible(true);
+        dispose();
     }//GEN-LAST:event_ButtonVolverActionPerformed
 
     /**

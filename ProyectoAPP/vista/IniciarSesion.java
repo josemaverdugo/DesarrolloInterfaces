@@ -1,6 +1,8 @@
 
 package desarrollodeinterfaces.ProyectoAPP.vista;
+import desarrollodeinterfaces.ProyectoAPP.controller.UsuarioController;
 import desarrollodeinterfaces.ProyectoAPP.vista.Inicio;
+import javax.swing.JOptionPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import org.netbeans.validation.api.builtin.stringvalidation.MayusculaValidator;
@@ -78,12 +80,15 @@ public class IniciarSesion extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        validationPanel1.setFont(new java.awt.Font("Cascadia Mono", 1, 18)); // NOI18N
         jPanel1.add(validationPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 440, 60));
 
         LabelUsuario.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
         LabelUsuario.setText(org.openide.util.NbBundle.getMessage(IniciarSesion.class, "IniciarSesion.LabelUsuario.text_1")); // NOI18N
         jPanel1.add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, 80, 30));
 
+        TextFieldUsuario.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
         TextFieldUsuario.setText(org.openide.util.NbBundle.getMessage(IniciarSesion.class, "IniciarSesion.TextFieldUsuario.text")); // NOI18N
         TextFieldUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +102,7 @@ public class IniciarSesion extends javax.swing.JDialog {
         LabelContraseña.setText(org.openide.util.NbBundle.getMessage(IniciarSesion.class, "IniciarSesion.LabelContraseña.text")); // NOI18N
         jPanel1.add(LabelContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 100, 30));
 
+        TextFieldContrasena.setFont(new java.awt.Font("Cascadia Mono", 1, 22)); // NOI18N
         TextFieldContrasena.setText(org.openide.util.NbBundle.getMessage(IniciarSesion.class, "IniciarSesion.TextFieldContrasena.text")); // NOI18N
         TextFieldContrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,13 +127,18 @@ public class IniciarSesion extends javax.swing.JDialog {
                 BotonVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(BotonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, 40));
+        jPanel1.add(BotonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, 40));
 
         BotonEntrar.setFont(new java.awt.Font("Cascadia Mono", 0, 15)); // NOI18N
         BotonEntrar.setText(org.openide.util.NbBundle.getMessage(IniciarSesion.class, "IniciarSesion.BotonEntrar.text")); // NOI18N
+        BotonEntrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEntrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(BotonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 110, 40));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desarrollodeinterfaces/ProyectoAPP/fondoappFinal.jpg"))); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/desarrollodeinterfaces/ProyectoAPP/imagenIniciarSesionTamaño.jpg"))); // NOI18N
         Fondo.setText(org.openide.util.NbBundle.getMessage(IniciarSesion.class, "IniciarSesion.Fondo.text")); // NOI18N
         jPanel1.add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 650, 450));
 
@@ -156,12 +167,25 @@ public class IniciarSesion extends javax.swing.JDialog {
     private void BotonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonVolverActionPerformed
         Inicio i1=new Inicio();
         i1.setVisible(true);
+        dispose();
     }//GEN-LAST:event_BotonVolverActionPerformed
 
     private void BotonOlvidarContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonOlvidarContrasenaActionPerformed
         OlvidarContrasena oc1=new OlvidarContrasena();
         oc1.setVisible(true);
+        dispose();
     }//GEN-LAST:event_BotonOlvidarContrasenaActionPerformed
+
+    private void BotonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEntrarActionPerformed
+        
+        if( UsuarioController.validarContraseña(TextFieldUsuario.getText(), TextFieldContrasena.getText())==true){
+            dispose();
+        }else{  
+        }
+        
+       
+        
+    }//GEN-LAST:event_BotonEntrarActionPerformed
 
     /**
      * @param args the command line arguments
